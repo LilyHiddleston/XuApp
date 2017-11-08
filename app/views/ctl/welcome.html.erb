@@ -1,0 +1,30 @@
+
+<html> 
+<head> 
+	<script type="text/javascript"> 
+		function startTime() { 
+			var today=new Date() 
+			var h=today.getHours() 
+			var m=today.getMinutes() 
+			var s=today.getSeconds() // 当数字是小于10的就要在前面加0.看起来规范 
+			m=checkTime(m) 
+			s=checkTime(s) 
+			document.getElementById('txt').innerHTML=h+":"+m+":"+s 
+			t=setTimeout('startTime()',1000) 
+		} 
+		function checkTime(i) { 
+			if (i<10) {
+				i="0" + i
+			} 
+			return i 
+		} 
+	</script> 
+</head> 
+<body onload="startTime()"> 
+	<h1>Ctl#welcome</h1>
+	<p>Find me in app/views/ctl/welcome.html.erb</p>
+	1.<a href="hhttp://www.ucas.edu.cn/">首页-中国科学院大学</a> </br></br>
+	2.<span id="txt"></span> </br></br>
+	3.<button onclick=window.open("./back")>跳转</button>
+</body> 
+</html> 
